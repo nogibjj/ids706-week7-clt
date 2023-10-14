@@ -1,31 +1,63 @@
-# IDS706-python-template [![CI](https://github.com/nogibjj/IDS706-python-template/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/IDS706-python-template/actions/workflows/ci.yml)
+# Week 7: Package a Rust Script into a Command-Line Tool[![CI](https://github.com/nogibjj/ids706-week7-clt/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/ids706-week7-clt/actions/workflows/ci.yml)
 
-Mini-project 1. 
+## Project Description
 
-## Features
-- Environment Setup: Utilizes .devcontainer to set up a development environment in codespaces, ensuring consistent development environments across contributors.
-- Automated Workflow: Uses a Makefile to automate common tasks such as installation, testing, formatting, and linting.
-- Continuous Integration: Integrated with GitHub Actions to automate testing and other checks on push or pull request.
-- Base Libraries: Includes a foundational set of libraries for DevOps and web development, listed in requirements.txt.
+Week 7:  (Students can do this in Rust as well)  
+### Requirements 
+- Package a Python script with setuptools or a similar tool
+- Include a user guide on how to install and use the tool
+- Include communication with an external or internal database (NoSQL, SQL, etc) [If you use Rust you can skip the DB part]
+### Grading Criteria 
+- Functionality of the tool (20 points)
+- User guide clarity (20 points)    
+### Deliverables     
+- Python package
+- User guide (PDF or markdown)  
+You can delay turning this in until the following week so that Alfredo can guide through it
 
-## Repository Structure
-- main.py: The main Python script of the project.
-- test_main.py: Tests associated with the main.py script.
-- .devcontainer: Configuration for setting up a development environment in codespaces.
-- .github: Configuration for GitHub Actions and other GitHub-related settings.
-- requirements.txt: Lists the Python libraries and their versions required for this project.
-- Makefile: Script to automate common tasks.
+## `notekeeper` - Rust Command-Line Tool
+
+`notekeeper` is a lightweight and straightforward command-line tool written in Rust, designed to assist you in adding, viewing, and deleting notes. While the current implementation stores notes in-memory (and hence they are not persistent), this tool serves as a foundation upon which additional features and integrations can be built.
 
 ## Getting Started
 
-1. Create a New Repository: Use this repository as a template to create a new repository.
-2. Clone the Repository: Clone the new repository to your local machine.
-3. Branching: Always create a new branch for your tasks or features.
-4. Development: Make the necessary changes or additions to the project.
-5. Commit and Push: Commit your changes and push them to the repository.
-6. Pull Requests: Create a pull request to merge your changes into the main branch.
-7. Code Review: Ensure your code is reviewed and all checks pass before merging.
-8. Clean-Up: After merging, delete the feature or task branch to keep the repository clean.
+These instructions will help you get a copy of `notekeeper` up and running on your local machine.
 
-## Contribution
-Contributions are welcome! Please ensure you follow the outlined process for development and adhere to best practices.
+### Installation
+
+1. Clone the repository or download and extract the ZIP file.
+   ```
+   git clone https://github.com/nogibjj/ids706-week7-clt
+   ```
+   Or manually download and extract the ZIP file.
+
+2. Navigate to the project directory:
+   ```
+   cd ids706-week7-clt
+   ```
+
+3. Build the project:
+   ```
+   cargo build
+   ```
+
+4. Now, the `notekeeper` tool is ready for use!
+
+## Usage
+
+To utilize `notekeeper`, use the `cargo run` command followed by the desired `notekeeper` command.
+
+- **Add a Note**:
+  ```
+  cargo run -- add "Your note content here"
+  ```
+
+- **View All Notes**:
+  ```
+  cargo run -- view
+  ```
+
+- **Delete a Note by ID**:
+  ```
+  cargo run -- delete 1
+  ```

@@ -1,0 +1,9 @@
+
+[package]
+name = "notekeeper"
+version = "0.1.0"
+authors = ["Asterisk"]
+edition = "2018"
+
+[dependencies]
+clap = "2.33"
